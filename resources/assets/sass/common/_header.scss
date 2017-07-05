@@ -1,7 +1,9 @@
 .space-header {
     width: 100%;
+    position: relative;
     &.menu-is-active {
         .space-container {
+            background: #555;
             .header-title {
                 a {
                     color: $white;
@@ -33,8 +35,9 @@
         }
     }
     .space-container {
+        background: $white;
         float: left;
-        position: relative;
+        position: fixed;
         z-index: 23;
         width: 100%;
         .header-title {
