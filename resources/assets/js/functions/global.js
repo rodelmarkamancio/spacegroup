@@ -11,4 +11,14 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $(".search-icon-btn").on('click', function(e) {
+        var fullSearch = $(".space-full-search-page"),
+            spaceHeader = $(".space-header");
+
+        $(this).toggleClass('is-active');
+        fullSearch.toggleClass('is-active');
+        spaceHeader.toggleClass('search-is-active');
+        e.preventDefault();
+    });
+
 });
