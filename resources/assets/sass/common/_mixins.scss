@@ -1,0 +1,38 @@
+@mixin rotate {
+    -ms-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+
+@mixin mediamin($min) {
+    @media screen and (min-width: #{$min}) { @content; }
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin slideHover($first-color, $second-color) {
+    -webkit-background-clip: text;
+    -moz-background-clip:    text;
+    -o-background-clip:      text;
+    background-clip:         text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+    background-image: linear-gradient(
+            to right,
+            $second-color,
+            $second-color 50%,
+            $first-color 50%);
+            background-size: 200% 100%;
+            background-position: 100%;
+}
+
+@mixin slideHoverPseudo {
+    @include transition(all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1));
+    background-position: 0%;
+}

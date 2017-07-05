@@ -1,0 +1,181 @@
+.c-hamburger {
+    background: transparent;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 35px;
+    height: 25px;
+    font-size: 0;
+    text-indent: -9999px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none; 
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: background 0.3s;
+            transition: background 0.3s;
+
+    &:focus {
+        outline: none;
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        top: 12px;
+        left: 7px;
+        right: 7px;
+        height: 2px;
+        background: $black;
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $black;
+            content: "";
+        }
+        &:before {
+            top: -7px;
+        }
+        &:after {
+            bottom: -7px;
+        }
+    }
+
+    &.c-hamburger--htx {
+        span {
+            -webkit-transition: background 0s 0.3s;
+                    transition: background 0s 0.3s;
+            &:before,
+            &:after {
+                -webkit-transition-duration: 0.3s, 0.3s;
+                        transition-duration: 0.3s, 0.3s;
+                -webkit-transition-delay: 0.3s, 0s;
+                        transition-delay: 0.3s, 0s;
+            }
+
+            &:before {
+                -webkit-transition-property: top, -webkit-transform;
+                        transition-property: top, transform;
+            }
+
+            &:after {
+                -webkit-transition-property: bottom, -webkit-transform;
+                        transition-property: bottom, transform;
+            }
+        }
+
+        /* active state, i.e. menu open */
+        &.is-active {
+            span {
+                background: none;
+                &:before {
+                    top: 0;
+                    -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                }
+                &:after {
+                    bottom: 0;
+                    -webkit-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                            transform: rotate(-45deg);
+                }
+                &:before,
+                &:after {
+                -webkit-transition-delay: 0s, 0.3s;
+                        transition-delay: 0s, 0.3s;
+                }
+            }
+        }
+    }
+}
+
+.space-full-menu {
+    position: relative;
+    display: none;
+    background: $white;
+    &.is-active {
+        display: block;
+        .space-container {
+            background: $gray;
+            @include transition(background 300ms ease-in 200ms);
+        }
+    }
+    .space-container {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 21;
+        .header-menu {
+            height: inherit;
+            ul {
+                display: block;
+                list-style: none;
+                text-align: right;
+                padding: 0;
+                li {
+                    a {
+                        color: $white;
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            text-decoration: underline;
+                        }
+                        label {
+                            cursor: pointer;
+                        }
+                    }
+                }
+                &.header-first-menu {
+                    padding: 10rem 8.35rem 5rem;
+                    width: auto;
+                    li {
+                        a {
+                            label {
+                                color: $white;
+                                font: normal 8.20rem $font-merriweather-regular;
+                                text-decoration: none;
+                                @include slideHover($white, $black);
+                                &:hover {
+                                    @include slideHoverPseudo;
+                                }
+                            }
+                        }
+                    } 
+                }
+                &.header-second-menu {
+                    padding: 0 8.4rem 0 0;
+                    li {
+                        display: inline-block;
+                        &:last-child {
+                            a {
+                                padding-right: 0;
+                            }
+                        }
+                        a {
+                            display: block;
+                            padding: 5px 15px;
+                            label {
+                                font: 500 1.5rem $font-century-gothic-bold;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                                @include slideHover($white, $black);
+                                &:hover {
+                                    @include slideHoverPseudo;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

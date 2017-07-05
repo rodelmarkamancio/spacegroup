@@ -1,0 +1,26 @@
+// user list
+.users-list {
+    table {
+        &.table {
+            thead {
+                th {
+                    &:nth-child(3),
+                    &:last-child {
+                        text-align: center;
+                    }
+                }
+            }
+            tbody {
+                td {
+                    &:nth-child(3),
+                    &:last-child {
+                        text-align: center;
+                    }
+                    .nav-link {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+}

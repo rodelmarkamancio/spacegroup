@@ -1,0 +1,101 @@
+// header content
+.space-header-content {
+    .header-container {
+        .header-content-left {
+            .content-header {
+                height: 450px;
+                margin-bottom: 9rem;
+                h1 {
+                    padding-bottom: 10px;
+                    a {
+                        color: $black;
+                        background-image: linear-gradient(180deg,transparent 65%,#fcf113 0);
+                        background-size: 0 100%;
+                        background-repeat: no-repeat;
+                        text-decoration: none;
+                        @include transition(background-size .4s ease);
+                        font: normal 12.5rem $font-merriweather-regular;
+                        line-height: .9;
+                        &:hover {
+                            background-size: 100% 100%;
+                            cursor: pointer;
+                        }
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            text-decoration: none;
+                        }
+                    }
+                    .typed-cursor {
+                        font-size: 100px;
+                    }
+                }
+            }
+        }
+        .header-content-right {
+            .content-header {
+                border-left: 3px solid $black;
+                padding: 0 0 15px 20px;
+                h2 { 
+                    font: normal 1.75rem $font-merriweather-regular;
+                    margin-bottom: 15px;
+                }
+                h3 {
+                    margin-top: 10px;
+                    margin-bottom: 8px;
+                    &.want-to-talk {
+                        color: $gray;
+                        font: normal 1.3rem $font-century-gothic;
+                        text-transform: uppercase;
+                    }
+                    &.contact-us {
+                        a {
+                            border-bottom: 2px solid $black;
+                            color: $black;
+                            font: normal 1.3rem $font-century-gothic-bold;
+                            text-transform: uppercase;
+                            &:hover, 
+                            &:active,
+                            &:focus {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+// home-content
+.space-home-content {
+    .content-row {
+        .content-image-wrap {
+            width: 100%;
+            padding-bottom: 10px;
+            img {
+                width: 100%;
+            }
+        }
+        .content-info {
+            margin-top: 25px;
+            .content-category {
+                color: $gray-light;
+                font: normal 12px $font-century-gothic-bold; 
+                text-transform: uppercase;
+            }
+            .content-author {
+                font: normal 12px $font-century-gothic-bold;  
+                text-transform: uppercase;
+            }
+        }
+        .content-title {
+            h2 {
+                a {
+
+                }
+            }
+        }
+    }
+}

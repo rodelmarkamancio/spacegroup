@@ -1,0 +1,110 @@
+.space-header {
+    width: 100%;
+    &.menu-is-active {
+        .space-container {
+            .header-title {
+                a {
+                    color: $white;
+                }
+            }
+            .header-option {
+                .header-nav {
+                    .header-search-item {
+                        .search-icon {
+                            &:before {
+                                border-top: .15em solid $white;
+                            }
+                            &:after {
+                                border: .32em solid $white;
+                            }
+                        }
+                    }
+                    .header-hamburger-item {
+                        .c-hamburger {
+                            span {
+                                &:before, &:after {
+                                    background-color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .space-container {
+        float: left;
+        position: relative;
+        z-index: 23;
+        width: 100%;
+        .header-title {
+            float: left;
+            padding: 25px 34px;
+            a {
+                color: $black;
+                &:hover,
+                &:active,
+                &:focus {
+                    text-decoration: none;
+                }
+                label {
+                    cursor: pointer;
+                    display: block;
+                    font: normal 2em $font-century-gothic-bold;
+                }
+            }
+        }
+        .header-option {
+            float: right;
+            padding: 32px 65px;
+            .header-locale-nav {
+
+            } 
+            .header-nav {
+                width: 70px;
+                .header-search-item {
+                    width: 35px;
+                    float: left;
+                    .search-icon {
+                        display: inline-block;
+                        font-size: 2em;
+                        height: .75em;
+                        position: relative;
+                        width: .75em;
+                        
+                        &:after {
+                            border-radius: 50%;
+                            border: .32em solid $black;
+                            content: '';
+                            display: block;
+                            height: .3em;
+                            left: 0;
+                            position: absolute;
+                            top: 0;
+                            width: .3em;
+                        }
+                        &:before {
+                            border-top: .15em solid $black;
+                            bottom: 0;
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            right: 0;
+                            -webkit-transform: rotate(45deg);
+                            -moz-transform: rotate(45deg);
+                            -ms-transform: rotate(45deg);
+                            -o-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                            width: .3em;
+                        }
+                    }
+                }
+                .header-hamburger-item {
+                    width: 35px;
+                    float: right;
+                }
+            }
+        }
+    }
+}
+

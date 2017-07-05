@@ -1,0 +1,59 @@
+.post-list {
+    .post-container {
+        padding-bottom: 15px;
+    }
+    .card-columns-posts {
+        padding: 0;
+        width: 450px;
+        .card-block {
+            .card-time {
+                font-size: 12px;
+            }
+            .media-body {
+                .list-group-item {
+                    .comment-info {
+                        width: 100%;
+                        display: block;
+                        .mt-0 {
+                            display: inline-block; 
+                            font-size: 14px;
+                            margin-bottom: 0!important;
+                            padding-right: 5px;
+                        }
+                    }
+                    .comment-time {
+                        display: block;
+                        font-size: 12px;
+                    }
+                } 
+            }
+        }
+    }
+    .post-pagination {
+        margin-top: 4rem;
+    }
+} 
+
+// update container
+.post-update-container {
+    form {
+        .post-list-content {
+            width: 100%;
+            float: left;
+            padding-bottom: 15px;
+            .post-list {
+                padding-left: 0;
+                li {
+                    display: block;
+                    float: left;
+                    width: 25%;
+                    align-items: center;
+                    padding: .25rem;
+                    margin-bottom: -1px;
+                    background-color: #fff;
+                    border: 1px solid rgba(0,0,0,.125);
+                }
+            }
+        }
+    }
+}
