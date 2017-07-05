@@ -1,5 +1,6 @@
 // header content
 .space-header-content {
+    padding-top: 90px;
     .header-container {
         .header-content-left {
             .content-header {
@@ -9,16 +10,11 @@
                     padding-bottom: 10px;
                     a {
                         color: $black;
-                        background-image: linear-gradient(180deg,transparent 65%,#fcf113 0);
-                        background-size: 0 100%;
-                        background-repeat: no-repeat;
-                        text-decoration: none;
-                        @include transition(background-size .4s ease);
+                        @include homeHoverSlide($pink, background-size .4s ease);
                         font: normal 12.5rem $font-merriweather-regular;
                         line-height: .9;
                         &:hover {
-                            background-size: 100% 100%;
-                            cursor: pointer;
+                            @include homeHoverSlidePseudo;
                         }
                         &:hover,
                         &:active,
@@ -46,6 +42,7 @@
                     &.want-to-talk {
                         color: $gray;
                         font: normal 1.3rem $font-century-gothic;
+                        letter-spacing: 1px;
                         text-transform: uppercase;
                     }
                     &.contact-us {
@@ -53,6 +50,7 @@
                             border-bottom: 2px solid $black;
                             color: $black;
                             font: normal 1.3rem $font-century-gothic-bold;
+                            letter-spacing: 1px;
                             text-transform: uppercase;
                             &:hover, 
                             &:active,
@@ -70,32 +68,134 @@
 //
 // home-content
 .space-home-content {
-    .content-row {
-        .content-image-wrap {
-            width: 100%;
-            padding-bottom: 10px;
-            img {
-                width: 100%;
+    .space--content-wrapper {
+        .content-row {
+            .content-detail-wrapper {
+                .content-image-wrap {
+                    border-bottom: 10px solid $pink;
+                    width: 100%;
+                    position: relative;
+                    overflow: hidden;
+                    &:hover {
+                        img {
+                            @include transform(scale(1.1));
+                        }
+                    } 
+                    img {
+                        max-width: 100%;
+                        @include transition(all 0.3s);
+                    }
+                }
+                .content-title {
+                    margin-top: 25px;
+                    a {
+                        color: $gray-light;
+                        font: normal 2.5rem $font-merriweather-regular;
+                        @include homeHoverSlide($pink, background-size .4s ease);
+                        line-height: 1;  
+                        &:hover {
+                            @include homeHoverSlidePseudo; 
+                        }
+                    }
+                }
+                .content-description {
+                    margin-bottom: 20px;
+                    margin-top: 40px;
+                    padding-bottom: 30px; 
+                    h3 {
+                        color: $black;
+                        font: normal 2.3rem $font-merriweather-regular;
+                        line-height: 1.3; 
+                    }
+                } 
             }
         }
-        .content-info {
-            margin-top: 25px;
-            .content-category {
-                color: $gray-light;
-                font: normal 12px $font-century-gothic-bold; 
-                text-transform: uppercase;
-            }
-            .content-author {
-                font: normal 12px $font-century-gothic-bold;  
-                text-transform: uppercase;
-            }
-        }
-        .content-title {
-            h2 {
-                a {
+    }
 
+    .space--middle-content-wrapper {
+        // background: url(http://spacegroup.co.uk/files/node_element_content/image_url/181/NodeElementContent_578dfbb6007ea.jpeg) 0 0 no-repeat;
+        background: url(../images/bldg.png) 0 0 no-repeat;
+        background-size: cover;
+        margin-top: 8rem;
+        padding: 20rem 0;
+        .content-row {
+            .content-detail {
+                .content-info {
+                    background: $gray4; 
+                    padding: 45px 55px 55px;
+                    h2 {
+                        color: $white;
+                        font: normal 3.2rem $font-merriweather-regular;
+                        line-height: 1.4; 
+                    }
                 }
             }
         }
     }
-}
+
+    .space--middle-intro-wrapper {
+        padding: 9rem 0 5rem;
+        .content-row {
+            .content-detail-title {
+                h2 {
+                    font: normal 3.3rem $font-merriweather-regular;
+                    line-height: 1.4; 
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .space--news-content {
+        padding: 5rem 0 0;
+        .content-row {
+            .content-detail-wrapper { 
+                border-top: 3px solid $black;
+                padding-top: 15px; 
+                .content-info {
+                    margin-top: 25px;
+                    .content-category {
+                        color: $gray-light;
+                        font: normal 12px $font-century-gothic-bold; 
+                        letter-spacing: 1px;
+                        text-transform: uppercase; 
+                    }
+                    .content-author {
+                        font: normal 12px $font-century-gothic-bold;  
+                        letter-spacing: 1px; 
+                        margin-left: 5px;
+                        text-transform: uppercase;
+                    } 
+                }
+                .content-title {
+                    padding: 0 0 30px;
+                    h2 {
+                        margin-top: 5px;
+                        a {
+                            color: $black;
+                            @include homeHoverSlide($pink, background-size .4s ease);
+                            font: normal 2.1rem $font-merriweather-regular;
+                            line-height: 1; 
+                            &:hover {
+                                @include homeHoverSlidePseudo;
+                            }
+                        }
+                    }
+                } 
+                .content-link {
+                    border-bottom: 5px solid $pink; 
+                    margin-bottom: 40px;
+                    padding-bottom: 20px;
+                    .link { 
+                        color: $gray3;
+                        font: normal 16px $font-merriweather-regular;
+                        font-style: italic;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 
