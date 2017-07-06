@@ -73,7 +73,7 @@
         }
 
         /* active state, i.e. menu open */
-        &.is-active {
+        &.menu-is-active {
             span {
                 background: none;
                 &:before {
@@ -102,7 +102,7 @@
     position: relative;
     display: none;
     background: $white;
-    &.is-active {
+    &.menu-is-active {
         display: block;
         .space-container {
             background: $gray;
@@ -184,7 +184,7 @@
     position: relative;
     display: none;
     background: $white;
-    &.is-active {
+    &.search-is-active {
         display: block;
         .space-container {
             background: $gray;

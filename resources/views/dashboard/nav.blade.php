@@ -8,7 +8,10 @@
             <li class="nav-item {{ Route::currentRouteNamed('dashboard') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
-            <li class="nav-item {{ Route::currentRouteNamed('menu') ? 'active' : '' }}">
+            <li class="nav-item {{ Route::currentRouteNamed('dashboard_home') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('dashboard_home') }}"><i class="fa fa-fw fa-dashboard"></i> Home</a>
+            </li>
+            {{-- <li class="nav-item {{ Route::currentRouteNamed('menu') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('menu') }}"><i class="fa fa-fw fa-navicon"></i> Menu</a>
             </li>
             @if(Auth::check() && Auth::user()->isRole('admin'))
@@ -24,7 +27,7 @@
             </li>
             <li class="nav-item {{ Route::currentRouteNamed('pages') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('pages') }}"><i class="fa fa-fw fa-sticky-note-o"></i> Pages</a>
-            </li>
+            </li> --}}
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">

@@ -50,7 +50,13 @@ Route::get('/logout', 'SessionsController@destroy')->name('logout');
 Route::post('/login', 'SessionsController@store');
 
 // DASHBOARD
-Route::get('/dashboard', 'DashboardController@create')->name('dashboard');
+Route::get('/admin/dashboard', 'DashboardController@create')->name('dashboard');
+
+// DASHBOARD HOME 
+Route::get('/admin/home', 'DashboardHomeController@index')->name('dashboard_home');
+Route::get('/admin/home/edit/{edit}', 'DashboardHomeController@edit')->name('edit_dashboard_home');
+Route::post('/admin/home', 'DashboardHomeController@store')->name('add_dashboard_home');
+Route::post('/admin/home/edit/{edit}', 'DashboardHomeController@update')->name('update_dashboard_home');
 
 // MENU
 Route::get('/menu', 'MenuController@index')->name('menu');
@@ -70,6 +76,7 @@ Route::post('/pages/update/{page}', 'PagesController@update')->name('pages_updat
 Route::delete('/pages/delete/{page}', 'PagesController@destroy')->name('pages_delete');
 
 // API
+Route::get('/api/homepage', 'ApiController@homepage');
 Route::get('/api/pages', 'ApiController@pages');
 Route::get('/api/pages/{pages}', 'ApiController@pageList');
 Route::get('/api/posts', 'ApiController@posts');

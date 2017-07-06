@@ -1,0 +1,62 @@
+.dashboard-home {
+    .dashboard-home-container {
+        h2 {
+
+        }
+        form {
+            .form-panel {
+                margin-bottom: 2rem;
+                .form-wrapper {
+                    padding: 3rem 2rem 0;
+                    .form-header {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+            label {
+                position: relative;
+                display: block;
+                input {
+                    font: 18px $font-century-gothic, sans-serif;
+                    border-radius: 0; 
+                    box-sizing: border-box;
+                    display: block;
+                    border: none;
+                    border-bottom: 1px solid rgba(0,0,0,0.15);
+                    padding: 20px;
+                    margin-bottom: 20px; 
+                    font-size: 18px;
+                    outline: none;
+                    transition: all 0.2s ease-in-out;
+                    &::placeholder {
+                        transition: all 0.2s ease-in-out;
+                        color: #999;
+                        font: 18px $font-century-gothic, sans-serif;
+                    }
+                    &:focus, &.populated {
+                        border-bottom: 1px solid rgba(0,0,0,1);
+                        padding-top: 28px;
+                        padding-bottom: 12px;
+                        &::placeholder {
+                            color: transparent;
+                        }
+                        & + span {
+                            opacity: 1;
+                            top: 10px;
+                        }
+                    }
+                }
+                
+                span {
+                    color: $black;
+                    font: 12px $font-century-gothic, sans-serif;
+                    position: absolute;
+                    top: 0px;
+                    left: 20px;
+                    opacity: 0;
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+        }
+    }
+}

@@ -8,10 +8,10 @@
                         <a href="#"><img src="http://spacegroup.co.uk/files/node_element_content/image_url/271/Granary%20Square%202280%20x%201280.jpg" alt=""></a>
                     </div>
                     <div class="content-title">
-                        <a href="#">Designing</a>
+                        <a href="#">{{ $home->mid_content_text_1 }}</a>
                     </div>
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                        <h3>{{ $home->mid_content_desc_1 }}</h3>
                     </div>
                 </div>
 
@@ -20,10 +20,10 @@
                         <a href="#"><img src="http://spacegroup.co.uk/files/node_element_content/image_url/268/Civic%20Theatre%20View%20on%20Parkgate%202280%20x%201280.jpg" alt=""></a>
                     </div>
                     <div class="content-title">
-                        <a href="#">Innovating</a>
+                        <a href="#">{{ $home->mid_content_text_2 }}</a>
                     </div>
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at magna</h3>
+                        <h3>{{ $home->mid_content_desc_2 }}</h3>
                     </div>
                 </div>
 
@@ -32,10 +32,10 @@
                         <a href="#"><img src="http://spacegroup.co.uk/files/node_element_content/image_url/259/NodeElementContent_5926dfe2ef524.jpeg" alt=""></a>
                     </div>
                     <div class="content-title">
-                        <a href="#">Connecting</a>
+                        <a href="#">{{ $home->mid_content_text_3 }}</a>
                     </div>
                     <div class="content-description">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                        <h3>{{ $home->mid_content_desc_3 }}</h3>
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@
                 <div class="col-md-6 content-detail"></div>
                 <div class="col-md-6 content-detail">
                     <div class="content-info">
-                        <h2>We connect with people & companies who share our drive for doing things better.</h2>
+                        <h2>{{ $home->mid_content_intro_1 }}</h2>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
         <div class="container">
             <div class="row content-row">
                 <div class="col-md-12 content-detail-title">
-                    <h2>As we enter the fourth industrial revolution, new thinking, combined with emerging technologies, is encouraging unprecedented innovation & challenge across construction & property.</h2>
+                    <h2>{{ $home->mid_content_intro_2 }}</h2>
                 </div>
             </div>
         </div>

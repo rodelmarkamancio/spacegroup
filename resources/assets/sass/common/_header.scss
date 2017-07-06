@@ -23,10 +23,24 @@
                     .header-hamburger-item {
                         .c-hamburger {
                             span {
-                                background: $white;
                                 &:before, &:after {
                                     background-color: $white;
-                                }
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.search-is-active {
+        .space-container {
+            .header-option {
+                .header-nav {
+                    .header-hamburger-item { 
+                        .c-hamburger {
+                            span {
+                                // background: $white;
                             }
                         }
                     }
@@ -66,7 +80,7 @@
             .header-nav {
                 width: 70px;
                 .header-search-item {
-                    width: 35px;
+                    width: 35px; 
                     float: left;
                     margin-top: 5px;
                     .search-icon {
@@ -87,8 +101,8 @@
                                     transition-delay: 0.3s, 0s;
                         }
                         &:before {
-                            -webkit-transition-property: top, -webkit-transform;
-                                    transition-property: top, transform;
+                            -webkit-transition-property: all, -webkit-transform;
+                                    transition-property: all, transform;
                         }
                         &:before {
                             content: "";
@@ -105,25 +119,31 @@
                             top: 11px;
                             left: 7px;
                             @include transform(rotate(45deg));
-                            -webkit-transition-property: bottom, -webkit-transform;
-                                    transition-property: bottom, transform; 
+                            -webkit-transition-property: all, -webkit-transform;
+                                    transition-property: all, transform; 
                         }
-                        &.is-active {
+                        &.search-is-active { 
                             background: none;
+                            border: 0;
                             &:before {
-                                top: 0;
+                                height: 3px;
+                                width: 18px;
+                                top: 6px;
+                                left: 1px;
+                                position: absolute;
+                                background: $white;
+                                -webkit-transform: rotate(-45deg); 
+                                    -ms-transform: rotate(-45deg);
+                                        transform: rotate(-45deg); 
+                            }
+                            &:after {
+                                height: 3px;
+                                width: 18px;
+                                top: 7px;
+                                left: 1px;
                                 -webkit-transform: rotate(45deg);
                                     -ms-transform: rotate(45deg);
                                         transform: rotate(45deg);
-                            }
-                            &:after {
-                                width: 14px;
-                                top: 4px;
-                                left: 5px;
-                                bottom: 0;
-                                -webkit-transform: rotate(-45deg);
-                                    -ms-transform: rotate(-45deg);
-                                        transform: rotate(-45deg);
                             }
                             &:before,
                             &:after {

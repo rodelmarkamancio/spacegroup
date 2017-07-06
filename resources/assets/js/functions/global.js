@@ -5,9 +5,13 @@ $(document).ready(function() {
         var fullMenu = $(".space-full-menu"),
             spaceHeader = $(".space-header");
 
-        $(this).toggleClass('is-active');
-        fullMenu.toggleClass('is-active');
+        $(this).toggleClass('menu-is-active');
+        fullMenu.toggleClass('menu-is-active');
         spaceHeader.toggleClass('menu-is-active');
+
+        $(".search-icon-btn").removeClass('search-is-active');
+        $(".space-full-search-page").removeClass('search-is-active');
+        $(".space-header").removeClass('search-is-active');
         e.preventDefault();
     });
 
@@ -15,9 +19,13 @@ $(document).ready(function() {
         var fullSearch = $(".space-full-search-page"),
             spaceHeader = $(".space-header");
 
-        $(this).toggleClass('is-active');
-        fullSearch.toggleClass('is-active');
+        $(this).toggleClass('search-is-active');
+        fullSearch.toggleClass('search-is-active');
         spaceHeader.toggleClass('search-is-active');
+
+        $(".c-hamburger").removeClass('menu-is-active');
+        $(".space-full-menu").removeClass('menu-is-active');
+        $(".space-header").removeClass('menu-is-active');
         e.preventDefault();
     });
 

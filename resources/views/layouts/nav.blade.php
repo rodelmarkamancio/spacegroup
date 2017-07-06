@@ -7,7 +7,7 @@
             <div class="header-locale-nav"></div>
             <div class="header-nav">
                 <div class="header-search-item">
-                    <span class="search-icon search-icon-btn"></span>
+                    <div class="search-icon search-icon-btn"></div>
                 </div>
                 <div class="header-hamburger-item o-grid__item">
                     <button class="c-hamburger c-hamburger--htx">

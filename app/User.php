@@ -58,4 +58,5 @@ class User extends Authenticatable implements HasRoleContract
     {
         $this->pages()->save($pages);
     }
+
 }
