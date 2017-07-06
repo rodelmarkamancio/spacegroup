@@ -58,6 +58,10 @@ Route::get('/admin/home/edit/{edit}', 'DashboardHomeController@edit')->name('edi
 Route::post('/admin/home', 'DashboardHomeController@store')->name('add_dashboard_home');
 Route::post('/admin/home/edit/{edit}', 'DashboardHomeController@update')->name('update_dashboard_home');
 
+// DASHBOARD ASSETS
+Route::get('/admin/assets', 'DashboardAssetsController@index')->name('dashboard_assets');
+Route::post('/admin/assets', 'DashboardAssetsController@store')->name('dashboard_store_assets');
+
 // MENU
 Route::get('/menu', 'MenuController@index')->name('menu');
 Route::get('/menu/edit/{menu}', 'MenuController@edit')->name('menu_edit');

@@ -24,6 +24,11 @@ class DashboardHomeController extends Controller
      */
     public function index()
     {
+        $home = DashboardHome::latest()->get()[0];
+        if ($home->id) {
+            return redirect()->route('edit_dashboard_home', $home->id);
+        }
+        
         $rand1 = md5(uniqid(rand(), true).'-'.date('+1').'-'.mt_rand());
         $rand2 = md5(uniqid(rand(), true).'-'.date('+2').'-'.mt_rand());
         $rand3 = md5(uniqid(rand(), true).'-'.date('+3').'-'.mt_rand());
@@ -79,21 +84,10 @@ class DashboardHomeController extends Controller
 
         $dashboardHome = DashboardHome::create($request->all());
 
-        // foreach ($request->photos as $photo) {
-        //     $filename = $photo->store('photos');
-
-        //     $photo->move(public_path("/uploads/photos"), $filename);
-
-        //     PagesPhotos::create([
-        //         'page_id' => $page->id,
-        //         'filename' => $filename
-        //     ]);
-        // }
-
         // flash message
         \Session::flash('flash_message', 'Homepage is successfully updated.');
 
-        return redirect('edit_dashboard_home', $dashboardHome->id);
+        return redirect()->route('edit_dashboard_home', $dashboardHome->id);
     }
 
     /**

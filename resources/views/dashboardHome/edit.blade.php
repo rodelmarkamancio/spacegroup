@@ -51,7 +51,7 @@
                     
                     <div class="form-wrapper">
                         <div class="card-header form-header">
-                            <i class="fa fa-table"></i> Panel 1
+                            <i class="fa fa-bars"></i> Panel 1
                         </div>
 
                         <div class="form-group">
@@ -74,7 +74,7 @@
 
                     <div class="form-wrapper">
                         <div class="card-header form-header">
-                            <i class="fa fa-table"></i> Panel 2
+                            <i class="fa fa-bars"></i> Panel 2
                         </div>
 
                         <div class="form-group">
@@ -97,7 +97,7 @@
 
                     <div class="form-wrapper">
                         <div class="card-header form-header">
-                            <i class="fa fa-table"></i> Panel 3
+                            <i class="fa fa-bars"></i> Panel 3
                         </div>
 
                         <div class="form-group">
@@ -120,7 +120,7 @@
 
                     <div class="form-wrapper">
                         <div class="card-header form-header">
-                            <i class="fa fa-table"></i> Panel Introduction
+                            <i class="fa fa-bars"></i> Panel Introduction
                         </div>
 
                         <div class="form-group">

@@ -2,14 +2,17 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="{{ route('dashboard') }}">Training</a>
+    <a class="navbar-brand" href="{{ route('dashboard') }}">Space Group</a>
     <div class="collapse navbar-collapse" id="navbarExample">
         <ul class="sidebar-nav navbar-nav">
             <li class="nav-item {{ Route::currentRouteNamed('dashboard') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li class="nav-item {{ Route::currentRouteNamed('dashboard_home') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('dashboard_home') }}"><i class="fa fa-fw fa-dashboard"></i> Home</a>
+                <a class="nav-link" href="{{ route('dashboard_home') }}"><i class="fa fa-fw fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item {{ Route::currentRouteNamed('dashboard_assets') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('dashboard_assets') }}"><i class="fa fa-fw fa-file-image-o"></i> Assets</a>
             </li>
             {{-- <li class="nav-item {{ Route::currentRouteNamed('menu') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('menu') }}"><i class="fa fa-fw fa-navicon"></i> Menu</a>

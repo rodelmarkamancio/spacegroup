@@ -1,6 +1,7 @@
 @import "common/variables";
 @import "common/mixins";
 @import "common/global";
+@import "common/fonts";
 
 @import "admin/cards";
 @import "admin/navbar";
@@ -11,3 +12,5 @@
 @import "admin/dashboardhome"; 
 
 @import "components/select2"; 
+@import "components/uploadfile";  
+ 
