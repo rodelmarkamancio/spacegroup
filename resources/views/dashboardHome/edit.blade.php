@@ -55,8 +55,20 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="file" name="mid_content_img_1" class="form-control">
-                            <input type="hidden" name="mid_content_img_id_1" value="{{ $dHome[0]->mid_content_img_id_1 }}">
+                            <div class="form-select-image btn-select-image" data-input-value="mid-content-img-1"
+                                @if ($dHome[0]->mid_content_img_1)
+                                    style="width: 300px; height: 100%;"
+                                @endif
+                                >
+                                @if ($dHome[0]->mid_content_img_1)
+                                    <div class="upload-image-display mid-content-img-1">
+                                        <img src="{{ route('storage', $dHome[0]->mid_content_img_1) }}" alt="" />
+                                    </div>
+                                @else
+                                    <div class="btn-select"><i class="fa fa-plus"></i></div>
+                                @endif
+                            </div>
+                            <input type="hidden" name="mid_content_img_1" id="mid-content-img-1" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>
@@ -78,8 +90,10 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="file" name="mid_content_img_2" class="form-control">
-                            <input type="hidden" name="mid_content_img_id_2" value="{{ $dHome[0]->mid_content_img_id_2 }}">
+                            <div class="form-select-image btn-select-image" data-input-value="mid-content-img-2">
+                                <div class="btn-select"><i class="fa fa-plus"></i></div>
+                            </div>
+                            <input type="hidden" name="mid_content_img_2" id="mid-content-img-2" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>
@@ -101,8 +115,10 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="file" name="mid_content_img_3" class="form-control">
-                            <input type="hidden" name="mid_content_img_id_3" value="{{ $dHome[0]->mid_content_img_id_3 }}">
+                            <div class="form-select-image btn-select-image" data-input-value="mid-content-img-3">
+                                <div class="btn-select"><i class="fa fa-plus"></i></div>
+                            </div>
+                            <input type="hidden" name="mid_content_img_3" id="mid-content-img-3" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>
@@ -150,4 +166,5 @@
             </form>
         </div>
     </div>
+    @include ('dashboardHome.uploader')
 @endsection

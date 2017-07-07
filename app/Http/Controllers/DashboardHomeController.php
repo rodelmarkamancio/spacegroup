@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UploadRequest;
 use App\DashboardHome;
+use App\DashboardAssets;
 use Carbon\Carbon;
 
 class DashboardHomeController extends Controller
@@ -67,9 +68,6 @@ class DashboardHomeController extends Controller
                 'head_text_2' => 'required|min:3',
                 'head_text_3' => 'required|min:3',
                 'head_intro' => 'required|min:3',
-                'mid_content_img_id_1' => 'required|min:3',
-                'mid_content_img_id_2' => 'required|min:3',
-                'mid_content_img_id_3' => 'required|min:3',
                 'mid_content_text_1' => 'required|min:3',
                 'mid_content_text_2' => 'required|min:3',
                 'mid_content_text_3' => 'required|min:3',
@@ -99,8 +97,13 @@ class DashboardHomeController extends Controller
     public function edit($dashboardHome)
     {
         $dHome = DashboardHome::where('id', $dashboardHome)->get();
+        $assets = DashboardAssets::latest()->get();
 
-        return view('dashboardHome.edit', compact('dHome'));
+        return view('dashboardHome.edit', compact([
+                'dHome', 
+                'assets'
+            ]
+        ));
     }
 
     /**
@@ -119,9 +122,6 @@ class DashboardHomeController extends Controller
                 'head_text_2' => 'required|min:3',
                 'head_text_3' => 'required|min:3',
                 'head_intro' => 'required|min:3',
-                'mid_content_img_id_1' => 'required|min:3',
-                'mid_content_img_id_2' => 'required|min:3',
-                'mid_content_img_id_3' => 'required|min:3',
                 'mid_content_text_1' => 'required|min:3',
                 'mid_content_text_2' => 'required|min:3',
                 'mid_content_text_3' => 'required|min:3',
@@ -139,7 +139,7 @@ class DashboardHomeController extends Controller
         // flash message
         \Session::flash('flash_message', 'Homepages is successfully updated.');
 
-        return redirect('edit_dashboard_home', $id);
+        return redirect()->route('edit_dashboard_home', $id);
     }
 
 }
