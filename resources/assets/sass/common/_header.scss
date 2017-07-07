@@ -1,7 +1,8 @@
 .space-header {
     width: 100%;
     position: relative;
-    &.menu-is-active {
+    &.menu-is-active,
+    &.search-is-active {
         .space-container {
             background: #555;
             .header-title {
@@ -13,11 +14,9 @@
                 .header-nav {
                     .header-search-item {
                         .search-icon {
-                            &:before {
-                                border-top: .15em solid $white;
-                            }
+                            border: 2px solid $white;
                             &:after {
-                                border: .32em solid $white;
+                                background: $white; 
                             }
                         }
                     }
@@ -26,7 +25,22 @@
                             span {
                                 &:before, &:after {
                                     background-color: $white;
-                                }
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.search-is-active {
+        .space-container {
+            .header-option {
+                .header-nav {
+                    .header-hamburger-item { 
+                        .c-hamburger {
+                            span {
+                                // background: $white;
                             }
                         }
                     }
@@ -66,39 +80,76 @@
             .header-nav {
                 width: 70px;
                 .header-search-item {
-                    width: 35px;
+                    width: 35px; 
                     float: left;
+                    margin-top: 5px;
                     .search-icon {
-                        display: inline-block;
-                        font-size: 2em;
-                        height: .75em;
+                        border: 2px solid $black;
+                        cursor: pointer;
                         position: relative;
-                        width: .75em;
-                        
+                        display: inline-block;
+                        border-radius: 30px;
+                        height: 14px; 
+                        width: 14px;
+                        -webkit-transition: background 0s 0.3s;
+                                transition: background 0s 0.3s;
+                        &:before,
                         &:after {
-                            border-radius: 50%;
-                            border: .32em solid $black;
-                            content: '';
-                            display: block;
-                            height: .3em;
-                            left: 0;
-                            position: absolute;
-                            top: 0;
-                            width: .3em;
+                            -webkit-transition-duration: 0.3s, 0.3s;
+                                    transition-duration: 0.3s, 0.3s;
+                            -webkit-transition-delay: 0.3s, 0s;
+                                    transition-delay: 0.3s, 0s;
                         }
                         &:before {
-                            border-top: .15em solid $black;
-                            bottom: 0;
-                            content: '';
-                            display: block;
+                            -webkit-transition-property: all, -webkit-transform;
+                                    transition-property: all, transform;
+                        }
+                        &:before {
+                            content: "";
                             position: absolute;
-                            right: 0;
-                            -webkit-transform: rotate(45deg);
-                            -moz-transform: rotate(45deg);
-                            -ms-transform: rotate(45deg);
-                            -o-transform: rotate(45deg);
-                            transform: rotate(45deg);
-                            width: .3em;
+                            height: 0;
+                            width: 0;
+                        }
+                        &:after {
+                            content: "";
+                            height: 3px;
+                            width: 8px;
+                            background: $black; 
+                            position: absolute;
+                            top: 11px;
+                            left: 7px;
+                            @include transform(rotate(45deg));
+                            -webkit-transition-property: all, -webkit-transform;
+                                    transition-property: all, transform; 
+                        }
+                        &.search-is-active { 
+                            background: none;
+                            border: 0;
+                            &:before {
+                                height: 3px;
+                                width: 18px;
+                                top: 6px;
+                                left: 1px;
+                                position: absolute;
+                                background: $white;
+                                -webkit-transform: rotate(-45deg); 
+                                    -ms-transform: rotate(-45deg);
+                                        transform: rotate(-45deg); 
+                            }
+                            &:after {
+                                height: 3px;
+                                width: 18px;
+                                top: 7px;
+                                left: 1px;
+                                -webkit-transform: rotate(45deg);
+                                    -ms-transform: rotate(45deg);
+                                        transform: rotate(45deg);
+                            }
+                            &:before,
+                            &:after {
+                            -webkit-transition-delay: 0s, 0.3s;
+                                    transition-delay: 0s, 0.3s;
+                            }
                         }
                     }
                 }

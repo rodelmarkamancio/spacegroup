@@ -2,8 +2,9 @@ $(document).ready(function() {
     // 
     // Typing text in header
     setTimeout(function() {
+        var el1Val = $('.element1').data('content');
         var typed = new Typed('.element1', {
-            strings: ["Designing"],
+            strings: [el1Val],
             typeSpeed: 50,
             backDelay: 750,
             loop: false,
@@ -15,8 +16,9 @@ $(document).ready(function() {
     }, 0);
 
     setTimeout(function() {
+        var el2Val = $('.element2').data('content');
         var typed = new Typed('.element2', {
-            strings: ["Connecting"],
+            strings: [el2Val],
             typeSpeed: 50,
             backDelay: 750,
             loop: false,
@@ -28,8 +30,9 @@ $(document).ready(function() {
     }, 1000);
 
     setTimeout(function() {
+        var el3Val = $('.element3').data('content');
         var typed = new Typed('.element3', {
-            strings: ["Innovating"],
+            strings: [el3Val],
             typeSpeed: 50,
             backDelay: 750, 
             loop: false,

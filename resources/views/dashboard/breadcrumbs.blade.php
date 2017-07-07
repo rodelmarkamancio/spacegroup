@@ -13,6 +13,8 @@
             My Category
         @elseif (Route::currentRouteNamed('pages'))
             My Pages
+        @elseif (Route::currentRouteNamed('dashboard_home'))
+            Edit Homepage
         @endif
     </li>
 </ol>

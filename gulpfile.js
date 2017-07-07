@@ -50,6 +50,7 @@ var resources = {
             'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
             'node_modules/select2/dist/js/select2.min.js',
             'node_modules/jquery-sortable-lists/jquery-sortable-lists.min.js',
+            'node_modules/jquery-file-upload/js/jquery.uploadfile.min.js',
 
             'resources/assets/js/vendor/tether/tether.min.js',
             'resources/assets/js/vendor/chart.js/Chart.min.js',
@@ -57,6 +58,7 @@ var resources = {
             'resources/assets/js/vendor/datatables/dataTables.bootstrap4.min.js',
             'resources/assets/js/functions/sb-admin.js',
             'resources/assets/js/backend/main.js',
+            'resources/assets/js/backend/fileupload.js',
         ],
         "css": {
             "src": "resources/assets/sass/admin.scss"

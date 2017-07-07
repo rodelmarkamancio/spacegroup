@@ -18,9 +18,19 @@ use App\PagesPhotos;
 use App\Post;
 use App\PostsPhoto;
 use App\User;
+use App\DashboardHome;
 
 class ApiController extends Controller
 {
+    public function homepage()
+    {
+        $homepage = DashboardHome::latest()->get();
+
+        return response()->json([
+            'homepage' => $homepage
+        ]);
+    }
+
     public function pages()
     {   
         $page = Pages::leftJoin('pages_photos', 'pages_photos.page_id', '=', 'pages.id')

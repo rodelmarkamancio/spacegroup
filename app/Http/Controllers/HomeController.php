@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
+use App\DashboardHome;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -25,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+        $home = DashboardHome::latest()->get()[0];
+        
+        return view('home.index', compact('home'));
     }
 }
